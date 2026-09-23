@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: rafiqa-al-omoma
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.0
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "true"
+      # بيانات تجريبية لتجربة الموقع (حسابات بكلمات مرور معروفة). أوقفيه بعد التجربة.
+      - key: SEED_DEMO
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true
