@@ -174,3 +174,34 @@
 *.lz
 *.lzma
 *.iso
+
+# Environment secrets (never commit real values)
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+!*.env.example
+
+# Databases and local runtime data
+**/data/
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.sqlite
+**/*.sqlite3
+
+# TLS certificates and private keys
+**/certs/
+**/*.crt
+**/*.cer
+**/*.csr
+**/*.p12
+**/*.pfx
+**/*.pem
+**/*.key
+
+# Logs and coverage
+**/logs/
+**/coverage/
+**/.nyc_output/

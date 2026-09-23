@@ -1,0 +1,16 @@
+{
+  "name": "rafiqa-al-omoma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "رفيقة الأمومة - تطبيق متكامل لرعاية الأم والطفل من الحمل حتى انتهاء التطعيمات",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n server,client -c blue,magenta \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "seed": "npm --prefix server run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
